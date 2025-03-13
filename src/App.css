@@ -1,0 +1,191 @@
+/* Center the main container */
+body {
+  background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Main container styles */
+.password-generator-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.7s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.password-generator-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* Header with gradient */
+h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+  background: linear-gradient(90deg, #6A5BFF, #FF4081);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Options container with smooth hover effects */
+.options {
+  margin-bottom: 20px;
+}
+
+/* Individual option style */
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.option:hover {
+  transform: translateX(5px);
+}
+
+.option input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.option label {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+/* Custom style for Length slider */
+.option input[type="range"] {
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #FF4081 0%, #6A5BFF 100%);
+  border-radius: 5px;
+  height: 5px;
+}
+
+.option input[type="range"]:focus {
+  outline: none;
+}
+
+.option input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF4081;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option input[type="range"]::-webkit-slider-thumb:hover {
+  background: #6A5BFF;
+}
+
+/* Password display container */
+.password-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  position: relative;
+}
+
+/* Password input with subtle border and focus effect */
+.password-display input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #F1F1F1, #E5E5E5);
+  color: #333;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Focus and selection effect for the input */
+.password-display input:focus {
+  border: 1px solid #FF4081;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(255, 64, 129, 0.5);
+}
+
+.password-display input::selection {
+  background-color: #FF4081;
+  color: white;
+}
+
+/* Copy Password Button */
+.password-display button {
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #6A5BFF, #FF4081);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s ease, background 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.password-display button:hover {
+  background: linear-gradient(90deg, #FF4081, #6A5BFF);
+  transform: translateY(-4px);
+}
+
+.password-display button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button style for when password is copied */
+.password-display button.copied {
+  background: #2ecc71; /* Green color */
+  animation: pulse 1s ease-out;
+  color: white;
+}
+
+.password-display button.copied:hover {
+  background: #27ae60; /* Darker green when hovered */
+  transform: translateY(0);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Keyframe for slide-up animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
